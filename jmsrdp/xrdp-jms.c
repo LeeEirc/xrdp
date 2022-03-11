@@ -265,13 +265,13 @@ lxrdp_connect(struct mod *mod)
         {
             /* This version of freerdp returns no useful information at
              * all */
-            mod->server_msg(mod, "Neutrinordp connect failed.", 0);
+            mod->server_msg(mod, "JMS rdp connect failed.", 0);
             mod->server_msg(mod, "No more information is available", 0);
             mod->server_msg(mod, "Check host is up"
                             " and credentials are correct", 0);
         }
 #endif
-        LOG(LOG_LEVEL_ERROR, "NeutrinoRDP proxy connection: status [Failed],"
+        LOG(LOG_LEVEL_ERROR, "JMS RDP proxy connection: status [Failed],"
             " RDP client [%s:%s], RDP server [%s:%d], RDP server username [%s],"
             " xrdp pamusername [%s], xrdp process id [%d]",
             mod->client_info.client_addr,
@@ -285,7 +285,7 @@ lxrdp_connect(struct mod *mod)
     }
     else
     {
-        LOG(LOG_LEVEL_INFO, "NeutrinoRDP proxy connection: status [Success],"
+        LOG(LOG_LEVEL_INFO, "JMS RDP proxy connection: status [Success],"
             " RDP client [%s:%s], RDP server [%s:%d], RDP server username [%s],"
             " xrdp pamusername [%s], xrdp process id [%d]",
             mod->client_info.client_addr,
@@ -539,9 +539,9 @@ lxrdp_end(struct mod *mod)
         " xrdp pamusername [%s], xrdp process id [%d]",
         mod->client_info.client_addr,
         mod->client_info.client_port,
-        mod->inst->settings->hostname,
-        mod->inst->settings->port,
-        mod->inst->settings->username,
+        mod->inst->settings->ServerHostname,
+        mod->inst->settings->ServerPort,
+        mod->inst->settings->Username,
         mod->pamusername,
         g_getpid());
     return 0;
@@ -606,7 +606,7 @@ lxrdp_set_param(struct mod *mod, const char *name, const char *value)
     }
     else if (g_strcmp(name, "program") == 0)
     {
-        settings->shell = g_strdup(value);
+        settings->RemoteApplicationProgram = g_strdup(value);
     }
     else if (g_strcmp(name, "nla") == 0)
     {
@@ -614,7 +614,7 @@ lxrdp_set_param(struct mod *mod, const char *name, const char *value)
     }
     else if (g_strcmp(name, "enable_dynamic_resizing") == 0)
     {
-        settings->desktop_resize = g_text2bool(value);
+        settings->DesktopResize = g_text2bool(value);
     }
     else if (g_strcmp(name, "pamusername") == 0)
     {
