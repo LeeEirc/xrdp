@@ -39,12 +39,19 @@ else
 RFXCODECDIR =
 endif
 
+if XRDP_JMSRDPDIR
+JMSRDPDIR = jmsrdp
+else
+JMSRDPDIR = 
+endif
+
 SUBDIRS = \
   common \
   vnc \
   xup \
   mc \
   $(NEUTRINORDPDIR) \
+  $(JMSRDPDIR) \
   libxrdp \
   $(PAINTERDIR) \
   $(RFXCODECDIR) \

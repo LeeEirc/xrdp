@@ -13,6 +13,11 @@
 		"ms-vscode.cpptools-extension-pack",
 		"ms-vscode.cmake-tools",
 	],
+	"remoteEnv":{
+		"PKG_CONFIG_PATH":"/usr/local/lib/pkgconfig",
+		"LC_CTYPE":"en_US.UTF-8",
+		"LC_ALL":"en_US.UTF-8",
+	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
 		3389,

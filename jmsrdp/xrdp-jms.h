@@ -30,7 +30,6 @@
 #include <freerdp/freerdp.h>
 #include <freerdp/rail.h>
 #include <freerdp/channels/rail.h>
-#include <freerdp/codec/bitmap.h>
 //#include <freerdp/utils/memory.h>
 //#include "/home/jay/git/jsorg71/staging/include/freerdp/freerdp.h"
 

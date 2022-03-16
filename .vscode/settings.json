@@ -1,4 +1,7 @@
 {
     "files.associations": {
-    }
+        "rfx.h": "c",
+        "freerdp.h": "c",
+        "libxrdp.h": "c"
+    },
 }
