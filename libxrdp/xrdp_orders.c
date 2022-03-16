@@ -26,10 +26,9 @@
 #include "ms-rdpbcgr.h"
 #include "ms-rdpegdi.h"
 
-#if defined(XRDP_NEUTRINORDP)
+#if defined(XRDP_NEUTRINORDP) || defined(XRDP_JMSRDPDIR)
 #include <freerdp/codec/rfx.h>
 #endif
-
 
 
 #define MAX_ORDERS_SIZE(_client_info) \
@@ -2895,7 +2894,7 @@ xrdp_orders_send_as_jpeg(struct xrdp_orders *self,
 }
 #endif
 
-#if defined(XRDP_NEUTRINORDP)
+#if defined(XRDP_NEUTRINORDP) || defined(XRDP_JMSRDPDIR)
 /*****************************************************************************/
 /*  secondary drawing order (bitmap v3) using remotefx compression */
 static int
@@ -2924,7 +2923,7 @@ xrdp_orders_send_as_rfx(struct xrdp_orders *self,
 }
 #endif
 
-#if defined(XRDP_JPEG) || defined(XRDP_NEUTRINORDP)
+#if defined(XRDP_JPEG) || defined(XRDP_NEUTRINORDP) || defined(XRDP_JMSRDPDIR)
 /*****************************************************************************/
 static int
 xrdp_orders_out_v3(struct xrdp_orders *self, int cache_id, int cache_idx,
@@ -2975,7 +2974,7 @@ xrdp_orders_send_bitmap3(struct xrdp_orders *self,
                          int cache_id, int cache_idx, int hints)
 {
     struct xrdp_client_info *ci;
-#if defined(XRDP_JPEG) || defined(XRDP_NEUTRINORDP)
+#if defined(XRDP_JPEG) || defined(XRDP_NEUTRINORDP) || defined(XRDP_JMSRDPDIR)
     int bufsize;
     struct stream *xr_s; /* xrdp stream */
 #endif
@@ -2984,7 +2983,7 @@ xrdp_orders_send_bitmap3(struct xrdp_orders *self,
     int quality;
     struct stream *temp_s; /* xrdp stream */
 #endif
-#if defined(XRDP_NEUTRINORDP)
+#if defined(XRDP_NEUTRINORDP) || defined(XRDP_JMSRDPDIR)
     STREAM *fr_s; /* FreeRDP stream */
     RFX_CONTEXT *context;
     RFX_RECT rect;
@@ -2999,7 +2998,7 @@ xrdp_orders_send_bitmap3(struct xrdp_orders *self,
 
     if (ci->v3_codec_id == ci->rfx_codec_id)
     {
-#if defined(XRDP_NEUTRINORDP)
+#if defined(XRDP_NEUTRINORDP) || defined(XRDP_JMSRDPDIR)
 
         if (!xrdp_orders_send_as_rfx(self, width, height, bpp, hints))
         {

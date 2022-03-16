@@ -28,7 +28,7 @@
 #include "ssl_calls.h"
 #include "string_calls.h"
 
-#if defined(XRDP_NEUTRINORDP)
+#if defined(XRDP_NEUTRINORDP) || defined(XRDP_JMSRDPDIR)
 #include <freerdp/codec/rfx.h>
 #include <freerdp/constants.h>
 #endif
@@ -301,7 +301,7 @@ xrdp_rdp_read_config(const char *xrdp_ini, struct xrdp_client_info *client_info)
     return 0;
 }
 
-#if defined(XRDP_NEUTRINORDP)
+#if defined(XRDP_NEUTRINORDP) || defined(XRDP_JMSRDPDIR)
 /*****************************************************************************/
 static void
 cpuid(tui32 info, tui32 *eax, tui32 *ebx, tui32 *ecx, tui32 *edx)
@@ -383,7 +383,7 @@ xrdp_rdp_create(struct xrdp_session *session, struct trans *trans)
                                    self->client_info.connection_description,
                                    bytes);
     self->mppc_enc = mppc_enc_new(PROTO_RDP_50);
-#if defined(XRDP_NEUTRINORDP)
+#if defined(XRDP_NEUTRINORDP) || defined(XRDP_JMSRDPDIR)
     self->rfx_enc = rfx_context_new();
     rfx_context_set_cpu_opt(self->rfx_enc, xrdp_rdp_detect_cpu());
 #endif
@@ -404,7 +404,7 @@ xrdp_rdp_delete(struct xrdp_rdp *self)
 
     xrdp_sec_delete(self->sec_layer);
     mppc_enc_free(self->mppc_enc);
-#if defined(XRDP_NEUTRINORDP)
+#if defined(XRDP_NEUTRINORDP) || defined(XRDP_JMSRDPDIR)
     rfx_context_free((RFX_CONTEXT *)(self->rfx_enc));
 #endif
     g_free(self->client_info.tls_ciphers);

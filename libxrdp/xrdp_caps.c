@@ -1074,7 +1074,7 @@ xrdp_caps_send_demand_active(struct xrdp_rdp *self)
               "fAllowDynamicFidelity = 0x01,"
               "fAllowSubsampling = 0x01,"
               "colorLossLevel = 0x03");
-#if defined(XRDP_RFXCODEC) || defined(XRDP_NEUTRINORDP)
+#if defined(XRDP_RFXCODEC) || defined(XRDP_NEUTRINORDP) || defined(XRDP_JMSRDPDIR)
     /* remotefx */
     codec_caps_count++;
     out_uint8a(s, XR_CODEC_GUID_REMOTEFX, 16);
