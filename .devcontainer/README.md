@@ -1,0 +1,35 @@
+
+## Install:
+cmake --build <your build directory> --target install will install FreeRDP on your system
+
+with cmake --build <your build directory> --target package you can create tarballs for deployment.
+
+You should now have xfreerdp installed in /usr/local/bin:
+
+awake@envy:~$ which xfreerdp
+/usr/local/bin/xfreerdp
+And you should be able to review the build flags actually determined during the compilation:
+
+awake@envy:~$ xfreerdp /buildconfig
+This is FreeRDP version 2.0.0-dev3 (4d0876fcc)
+Build configuration: BUILD_TESTING=OFF BUILTIN_CHANNELS=ON HAVE_AIO_H=1 HAVE_EXECINFO_H=1 HAVE_FCNTL_H=1 HAVE_INTTYPES_H=1 HAVE_JOURNALD_H=TRUE HAVE_MATH_C99_LONG_DOUBLE=1 HAVE_POLL_H=1 HAVE_PTHREAD_MUTEX_TIMEDLOCK=ON HAVE_PTHREAD_MUTEX_TIMEDLOCK_LIB=1 HAVE_PTHREAD_MUTEX_TIMEDLOCK_SYMBOL= HAVE_SYSLOG_H=1 HAVE_SYS_EVENTFD_H=1 HAVE_SYS_FILIO_H= HAVE_SYS_MODEM_H= HAVE_SYS_SELECT_H=1 HAVE_SYS_SOCKIO_H= HAVE_SYS_STRTIO_H= HAVE_SYS_TIMERFD_H=1 HAVE_TM_GMTOFF=1 HAVE_UNISTD_H=1 HAVE_XI_TOUCH_CLASS=1 WITH_ALSA=ON WITH_CCACHE=ON WITH_CHANNELS=ON WITH_CLIENT=ON WITH_CLIENT_AVAILABLE=1 WITH_CLIENT_CHANNELS=ON WITH_CLIENT_CHANNELS_AVAILABLE=1 WITH_CLIENT_COMMON=ON WITH_CLIENT_INTERFACE=OFF WITH_CUPS=OFF WITH_DEBUG_ALL=OFF WITH_DEBUG_CAPABILITIES=OFF WITH_DEBUG_CERTIFICATE=OFF WITH_DEBUG_CHANNELS=OFF WITH_DEBUG_CLIPRDR=OFF WITH_DEBUG_DVC=OFF WITH_DEBUG_KBD=OFF WITH_DEBUG_LICENSE=OFF WITH_DEBUG_MUTEX=OFF WITH_DEBUG_NEGO=OFF WITH_DEBUG_NLA=OFF WITH_DEBUG_NTLM=OFF WITH_DEBUG_RAIL=OFF WITH_DEBUG_RDP=OFF WITH_DEBUG_RDPDR=OFF WITH_DEBUG_RDPEI=OFF WITH_DEBUG_REDIR=OFF WITH_DEBUG_RFX=OFF WITH_DEBUG_RINGBUFFER=OFF WITH_DEBUG_SCARD=OFF WITH_DEBUG_SND=OFF WITH_DEBUG_SVC=OFF WITH_DEBUG_SYMBOLS=OFF WITH_DEBUG_THREADS=OFF WITH_DEBUG_TIMEZONE=OFF WITH_DEBUG_TRANSPORT=OFF WITH_DEBUG_TSG=OFF WITH_DEBUG_TSMF=OFF WITH_DEBUG_WND=OFF WITH_DEBUG_X11=OFF WITH_DEBUG_X11_CLIPRDR=OFF WITH_DEBUG_X11_LOCAL_MOVESIZE=OFF WITH_DEBUG_XV=OFF WITH_DIRECTFB=OFF WITH_DSP_EXPERIMENTAL=OFF WITH_DSP_FFMPEG=ON WITH_EVENTFD_READ_WRITE=1 WITH_FAAC=ON WITH_FAAD2=OFF WITH_FFMPEG=TRUE WITH_FFMPEG=TRUE WITH_GFX_H264=ON WITH_GPROF=OFF WITH_GSM=OFF WITH_GSSAPI=OFF WITH_GSTREAMER_0_10=OFF WITH_GSTREAMER_1_0=OFF WITH_ICU=OFF WITH_IPP=OFF WITH_JPEG=OFF WITH_LAME=OFF WITH_LIBRARY_VERSIONING=ON WITH_LIBSYSTEMD=ON WITH_MACAUDIO=OFF WITH_MACAUDIO=OFF WITH_MACAUDIO_AVAILABLE=0 WITH_MANPAGES=ON WITH_MBEDTLS=OFF WITH_OPENH264=OFF WITH_OPENSLES=OFF WITH_OPENSSL=ON WITH_OSS=ON WITH_PCSC=OFF WITH_PROFILER=OFF WITH_PULSE=ON WITH_SAMPLE=OFF WITH_SANITIZE_ADDRESS=OFF WITH_SANITIZE_ADDRESS_AVAILABLE=1 WITH_SANITIZE_MEMORY=OFF WITH_SANITIZE_MEMORY_AVAILABLE=1 WITH_SANITIZE_THREAD=OFF WITH_SANITIZE_THREAD_AVAILABLE=1 WITH_SERVER=OFF WITH_SERVER_INTERFACE=ON WITH_SMARTCARD_INSPECT=OFF WITH_SSE2=ON WITH_THIRD_PARTY=OFF WITH_URBDRC_CLIENT=ON WITH_VALGRIND_MEMCHECK=OFF WITH_VALGRIND_MEMCHECK_AVAILABLE=1 WITH_WAYLAND=OFF WITH_X11=ON WITH_X264=OFF WITH_XCURSOR=ON WITH_XEXT=ON WITH_XFIXES=ON WITH_XI=ON WITH_XINERAMA=ON WITH_XKBFILE=ON WITH_XRANDR=OFF WITH_XRENDER=ON WITH_XSHM=ON WITH_XV=ON WITH_ZLIB=ON
+Build type:          Debug
+CFLAGS:               -fPIC -Wall -Wno-unused-result -Wno-unused-but-set-variable -Wno-deprecated-declarations -fvisibility=hidden -Wimplicit-function-declaration -Wredundant-decls -g
+Compiler:            GNU, 8.1.1
+Target architecture: x64
+Plugins are installed in /usr/local/lib(64)/freerdp:
+
+awake@envy:/usr/local/lib64/freerdp$ ls
+ibaudin-client-alsa.so  libdisp-client.so   libgeometry-client.so  librdpgfx-client.so       librdpsnd-client-oss.so       libtsmf-client-ffmpeg-decoder.so  libvideo-client.so
+libaudin-client-oss.so   libdrive-client.so  libparallel-client.so  librdpsnd-client-alsa.so  libserial-client.so           libtsmf-client-oss-audio.so
+libaudin-client.so       libecho-client.so   librdpei-client.so     librdpsnd-client-fake.so  libtsmf-client-alsa-audio.so  libtsmf-client.so
+After launching FreeRDP at least once, ~/.freerdp will be created to store known hosts:
+
+awake@envy:~/.freerdp$ ls
+cacert  known_hosts
+CA certificates can be added to ~/.freerdp/cacert for additional trusted CAs.
+
+## Uninstall:
+To uninstall by deleting all created files run:
+
+sudo xargs rm < install_manifest.txt

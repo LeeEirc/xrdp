@@ -29,8 +29,7 @@
 /* this is the freerdp main header */
 #include <freerdp/freerdp.h>
 #include <freerdp/rail.h>
-#include <freerdp/rail/rail.h>
-#include <freerdp/codec/bitmap.h>
+//#include <freerdp/rail/rail.h>
 //#include <freerdp/utils/memory.h>
 //#include "/home/jay/git/jsorg71/staging/include/freerdp/freerdp.h"
 
