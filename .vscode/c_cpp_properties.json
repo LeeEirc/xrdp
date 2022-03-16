@@ -5,15 +5,11 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/jmsrdp/**",
-                "/usr/local/include/freerdp2/freerdp/**",
-                "/usr/local/include/freerdp2/**",
-                "/usr/local/include/winpr2/**"
+                "/usr/local/include/freerdp2/",
+                "/usr/local/include/winpr2/"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/gcc",
-            "cStandard": "gnu17",
-            "cppStandard": "gnu++14",
-            "intelliSenseMode": "linux-gcc-x64"
+            "compilerPath": "/usr/bin/gcc"
         }
     ],
     "version": 4

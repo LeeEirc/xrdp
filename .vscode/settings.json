@@ -3,6 +3,12 @@
         "rfx.h": "c",
         "freerdp.h": "c",
         "libxrdp.h": "c",
-        "rail.h": "c"
+        "rail.h": "c",
+        "settings.h": "c",
+        "log.h": "c",
+        "xrdp-jms.h": "c",
+        "parse.h": "c",
+        "xrdp_client_info.h": "c",
+        "xrdp_constants.h": "c"
     },
 }

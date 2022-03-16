@@ -4,19 +4,20 @@ AM_CPPFLAGS = \
   -DXRDP_SHARE_PATH=\"${datadir}/xrdp\" \
   -DXRDP_PID_PATH=\"${localstatedir}/run\" \
   -I$(top_srcdir)/common \
-  $(FREERDP_CFLAGS)
+  $(FREERDP_CFLAGS) \
+  $(WINPR_CFLAGS)
 
 module_LTLIBRARIES = \
-  libxrdpjmsrdp.la
+  libjmsrdp.la
 
-libxrdpjmsrdp_la_SOURCES = \
+libjmsrdp_la_SOURCES = \
   xrdp-color.c \
   xrdp-color.h \
   xrdp-jms.c \
   xrdp-jms.h
 
-libxrdpjmsrdp_la_LIBADD = \
+libjmsrdp_la_LIBADD = \
   $(top_builddir)/common/libcommon.la \
   $(FREERDP_LIBS)
 
-libxrdpjmsrdp_la_LDFLAGS = -avoid-version -module
+libjmsrdp_la_LDFLAGS = -avoid-version -module

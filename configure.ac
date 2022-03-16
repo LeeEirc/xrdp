@@ -509,6 +509,7 @@ AC_CONFIG_FILES([
   xrdp/Makefile
   xrdpvr/Makefile
   xup/Makefile
+  jmsrdp/Makefile
 ])
 
 AC_REQUIRE_AUX_FILE([tap-driver.sh])
@@ -552,6 +553,7 @@ echo "  unit tests performable  $perform_unit_tests"
 echo ""
 echo "  CFLAGS = $CFLAGS"
 echo "  LDFLAGS = $LDFLAGS"
+echo "  FREERDP_LIBS = $FREERDP_LIBS"
 
 # xrdp_configure_options.h will be written to the build directory, not the source directory
 echo '#define XRDP_CONFIGURE_OPTIONS \' > ./xrdp_configure_options.h

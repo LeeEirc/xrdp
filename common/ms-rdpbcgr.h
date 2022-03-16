@@ -537,9 +537,9 @@
 #define FASTPATH_OUTPUT_COMPRESSION_USED  0x2
 
 /* Surface Command Type (2.2.9.1.2.1.10.1) */
-#define CMDTYPE_SET_SURFACE_BITS       0x0001
-#define CMDTYPE_FRAME_MARKER           0x0004
-#define CMDTYPE_STREAM_SURFACE_BITS    0x0006
+// #define CMDTYPE_SET_SURFACE_BITS       0x0001
+// #define CMDTYPE_FRAME_MARKER           0x0004
+// #define CMDTYPE_STREAM_SURFACE_BITS    0x0006
 
 /* Compression Flags (3.1.8.2.1) */
 /* TODO: to be renamed, not used anywhere */

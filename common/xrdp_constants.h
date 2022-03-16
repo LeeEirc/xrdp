@@ -201,16 +201,16 @@
 #define CF_ENHMETAFILE                 14
 #define CF_HDROP                       15
 #define CF_LOCALE                      16
-#define CF_MAX                         17
-#define CF_OWNERDISPLAY                128
-#define CF_DSPTEXT                     129
-#define CF_DSPBITMAP                   130
-#define CF_DSPMETAFILEPICT             131
-#define CF_DSPENHMETAFILE              142
-#define CF_PRIVATEFIRST                512
-#define CF_PRIVATELAST                 767
-#define CF_GDIOBJFIRST                 768
-#define CF_GDIOBJLAST                  1023
+// #define CF_MAX                         17
+// #define CF_OWNERDISPLAY                128
+// #define CF_DSPTEXT                     129
+// #define CF_DSPBITMAP                   130
+// #define CF_DSPMETAFILEPICT             131
+// #define CF_DSPENHMETAFILE              142
+// #define CF_PRIVATEFIRST                512
+// #define CF_PRIVATELAST                 767
+// #define CF_GDIOBJFIRST                 768
+// #define CF_GDIOBJLAST                  1023
 
 /* RDPDR constants */
 #define RDPDR_MAX_DEVICES              0x10
@@ -233,14 +233,14 @@
 #define BUTTON_STATE_DOWN 1
 
 /* messages */
-#define WM_PAINT       3
-#define WM_KEYDOWN     15
-#define WM_KEYUP       16
-#define WM_MOUSEMOVE   100
-#define WM_LBUTTONUP   101
-#define WM_LBUTTONDOWN 102
-#define WM_RBUTTONUP   103
-#define WM_RBUTTONDOWN 104
+// #define WM_PAINT       3
+// #define WM_KEYDOWN     15
+// #define WM_KEYUP       16
+// #define WM_MOUSEMOVE   100
+// #define WM_LBUTTONUP   101
+// #define WM_LBUTTONDOWN 102
+// #define WM_RBUTTONUP   103
+// #define WM_RBUTTONDOWN 104
 #define WM_BUTTON3UP   105
 #define WM_BUTTON3DOWN 106
 #define WM_BUTTON4UP   107
