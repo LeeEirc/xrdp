@@ -21,12 +21,6 @@ else
 NEUTRINORDPDIR =
 endif
 
-if XRDP_JMSRDPDIR
-JMSRDPDIR = jmsrdp
-else
-JMSRDPDIR =
-endif
-
 if XRDP_XRDPVR
 XRDPVRDIR = xrdpvr
 else
@@ -53,7 +47,7 @@ SUBDIRS = \
   xup \
   mc \
   $(NEUTRINORDPDIR) \
-  $(JMSRDPDIR) \
+  jmsrdp \
   libxrdp \
   $(PAINTERDIR) \
   $(RFXCODECDIR) \

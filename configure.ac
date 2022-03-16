@@ -121,8 +121,8 @@ AM_CONDITIONAL(XRDP_NEUTRINORDP, [test x$enable_neutrinordp = xyes])
 
 AC_ARG_ENABLE(jmsrdp, AS_HELP_STRING([--enable-jmsrdp],
               [Build jmsrdp module (default: no)]),
-              [], [enable_jmsrdp=no])
-AM_CONDITIONAL(XRDP_JMSRDPDIR, [test x$enable_jmsrdp = xyes])
+              [], [enable_jmsrdp=yes])
+AM_CONDITIONAL(XRDP_JMSRDP, [test x$enable_jmsrdp = xyes])
 AC_ARG_ENABLE(jpeg, AS_HELP_STRING([--enable-jpeg],
               [Build jpeg module (default: no)]),
               [], [enable_jpeg=no])
@@ -350,7 +350,7 @@ then
 fi
 
 AS_IF( [test "x$enable_neutrinordp" = "xyes"] , [PKG_CHECK_MODULES(FREERDP, freerdp >= 1.0.0)] )
-AS_IF( [test "x$enable_jmsrdp" = "xyes"] , [PKG_CHECK_MODULES(FREERDP, freerdp >= 2.0.0)] )
+# AS_IF( [test "x$enable_jmsrdp" = "xyes"] , [PKG_CHECK_MODULES(FREERDP, freerdp2 > 2.0.0)] )
 # checking for libjpeg
 if test "x$enable_jpeg" = "xyes"
 then

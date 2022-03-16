@@ -2,6 +2,7 @@
     "files.associations": {
         "rfx.h": "c",
         "freerdp.h": "c",
-        "libxrdp.h": "c"
+        "libxrdp.h": "c",
+        "rail.h": "c"
     },
 }
