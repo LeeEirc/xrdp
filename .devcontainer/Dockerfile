@@ -1,0 +1,3 @@
+FROM 2970298425/xrdp-dev:nrdp
+
+EXPOSE 3389

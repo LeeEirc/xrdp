@@ -2308,7 +2308,7 @@ lfreerdp_receive_channel_data(freerdp *instance, int channelId, uint8 *data,
 
     if (lchid >= 0)
     {
-        LOG_DEVEL(LOG_LEVEL_DEBUG, "lfreerdp_receive_channel_data: server to client, chanid: %d", lchid);
+        LOG_DEVEL(LOG_LEVEL_INFO, "lfreerdp_receive_channel_data: server to client, chanid: %d", lchid);
         error = mod->server_send_to_channel(mod, lchid, (char *)data, size,
                                             total_size, flags);
 
