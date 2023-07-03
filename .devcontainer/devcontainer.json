@@ -1,0 +1,25 @@
+{
+	"name": "xrdpdev",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "."
+	},
+	// Set *default* container specific settings.json values on container create.
+	// Add the IDs of extensions you want installed when the container is created.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cmake-tools",
+				"ms-vscode.cpptools",
+				"ms-vscode.cpptools-extension-pack",
+				"xaver.clang-format"
+			]
+		}
+	},
+	"remoteEnv": {
+		"PKG_CONFIG_PATH": "/usr/local/lib/pkgconfig"
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"remoteUser": "root",
+	"postAttachCommand": ""
+}
