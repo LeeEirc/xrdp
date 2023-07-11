@@ -28,6 +28,7 @@
 #include "log.h"
 #include "string_calls.h"
 #include <freerdp/settings.h>
+#include <cairo/cairo.h>
 
 #if defined(VERSION_STRUCT_RDP_FREERDP)
 #if VERSION_STRUCT_RDP_FREERDP > 1

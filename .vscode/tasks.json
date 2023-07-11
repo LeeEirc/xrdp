@@ -4,7 +4,7 @@
         {
             "type": "shell",
             "label": "build xrdp",
-            "command":"./bootstrap && ./configure --enable-neutrinordp --enable-devel-all",
+            "command":"./bootstrap && ./configure --enable-neutrinordp --enable-devel-all --enable-devel-logging",
         },
         {
             "type": "shell",

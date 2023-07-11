@@ -41,6 +41,7 @@ ARG DEPENDENCIES="       \
     nasm                 \
     netcat               \
     python-libxml2       \
+    libcairo2-dev        \
     uuid-dev             \
     xutils-dev           \
     xutils               \
@@ -60,17 +61,14 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked,id=xrdp \
     && echo "no" | dpkg-reconfigure dash \
     && echo "zh_CN.UTF-8" | dpkg-reconfigure locales \
     && sed -i "s@# export @export @g" ~/.bashrc \
-    && sed -i "s@# alias @alias @g" ~/.bashrc \
-    && rm -rf /var/lib/apt/lists/*
+    && sed -i "s@# alias @alias @g" ~/.bashrc
 
 RUN set -ex \
     && git clone -b devel --depth=1 https://github.com/neutrinolabs/NeutrinoRDP \
     && cd NeutrinoRDP \
     && cmake . \
     && make \
-    && make install \
-    && cd /opt \
-    && rm -rf NeutrinoRDP
+    && make install
 
 
 
